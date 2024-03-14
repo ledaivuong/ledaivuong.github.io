@@ -31,6 +31,25 @@ ul ul li::before {
   padding-left: 0;
 }
 
+div[class^="home-content"] {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+
+div.collapsible::before {
+  content: '\f0fe'; /* Unicode character for "plus" sign (+) */
+  font: var(--fa-font-solid);
+  font-size: var(--dl-space-space-twounits);
+  color: var(--dl-color-danger-redcustom);
+  float: inline-start;
+  margin-right: var(--dl-space-space-unit);
+}
+
+div.active::before {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
 .home-container {
   width: 100%;
   display: flex;
@@ -1547,6 +1566,9 @@ ul ul li::before {
   }
 }
 @media(max-width: 479px) {
+  div.collapsible::before {
+    font-size: var(--dl-space-space-oneandhalfunits);
+  }
   div[class^="home-project"]
    {
     flex: 0 0 auto;
@@ -2050,6 +2072,10 @@ ul ul li::before {
 }
 
 @media(max-width: 395px) {
+  div.collapsible::before {
+    font-size: var(--dl-space-space-unit);
+  }
+
   .home-text005 {
     font-size: 0.8rem;
   }

@@ -101,12 +101,12 @@
         </div>
         <div class="home-download-button">
           <link href="./button.css" rel="stylesheet" />
-          <button class="button-85"><a href="./public/cv/CV_VuongLe_QC_Engineer.pdf" download="xxx" target="_blank">
+          <button class="button-85"><a href="./public/cv/CV_VuongLe_QC_Engineer.pdf" download="VuongLe_QC_Engineer" target="_blank">
             Click here to view and download PDF version</a></button>
         </div>
         <div class="home-body">
           <div class="home-overview">
-            <div class="home-heading">
+            <div class="home-heading collapsible">
               <div class="home-container04">
                 <h1 class="home-text016">OVERVIEW</h1>
               </div>
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div class="home-technical">
-            <div class="home-heading01">
+            <div class="home-heading01 collapsible">
               <div class="home-container06">
                 <h1 class="home-text020">TECHNICAL PROFICIENCIES</h1>
               </div>
@@ -190,7 +190,7 @@
             </div>
           </div>
           <div class="home-experience">
-            <div class="home-heading02">
+            <div class="home-heading02 collapsible">
               <div class="home-container08">
                 <h1 class="home-text030">PROFESSIONAL EXPERIENCE</h1>
               </div>
@@ -723,5 +723,21 @@
         </div>
       </div>
     </div>
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
+        });
+      }
+      </script>
   </body>
 </html>
